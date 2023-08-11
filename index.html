@@ -1,180 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" /> -->
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            letter-spacing: 1px;
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        letter-spacing: 1px;
+      }
+
+      body {
+        background-color: #000;
+        font-family: "Didact Gothic", sans-serif;
+      }
+
+      .container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        color: #fff;
+        width: 100%;
+      }
+
+      .container > .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
+      }
+
+      .content h1 {
+        font-size: 3.25rem;
+        font-weight: 400;
+        letter-spacing: 6px;
+        word-spacing: 8px;
+      }
+
+      .container > .content .title {
+        font-size: 1.375rem;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        color: #f6d140;
+        font-size: 30px;
+      }
+
+      .container > .content .content {
+        letter-spacing: 1px;
+      }
+
+      /* .container > .content .content a {
+        font-weight: bold;
+        color: #f0f0f1;
+        font-size: 1.125;
+      } */
+
+      .container > .content .end div {
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+      .container > .content .end div:last-child {
+        margin-bottom: 50px;
+      }
+      .content .subscribe p {
+        margin-bottom: 5px;
+      }
+
+      .icon a {
+        display: block;
+        /* width: 25px; */
+        /* height: 25px; */
+      }
+      .icon {
+        display: flex;
+        justify-content: center;
+        gap: 45px;
+      }
+      .icon a:first-child img {
+        background-color: #fff;
+        width: 34px;
+        height: 34px;
+      }
+
+      .icon a img {
+        width: 100%;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+      }
+
+      @media (min-width: 380px) and (max-width: 600px) {
+        html {
+          font-size: 10px;
         }
+      }
 
-        body {
-            background-color: #000;
-            font-family: 'Didact Gothic', sans-serif;
+      @media (min-width: 1px) and (max-width: 379px) {
+        html {
+          font-size: 9px;
         }
-
-        .container {
-            width: 100%;
-            height: 100vh;
-            position: relative;
-            color: #fff;
-            width: 100%;
-        }
-
-        .container>.content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            width: 90%;
-        }
-
-        .content h1 {
-            font-size: 3.25rem;
-            font-weight: 400;
-            letter-spacing: 6px;
-            margin-bottom: 30px;
-            word-spacing: 8px;
-        }
-
-        .container>.content .title {
-            font-size: 1.375rem;
-            margin-bottom: 12px;
-        }
-
-        .container>.content .content {
-            letter-spacing: 1px;
-        }
-
-        .container>.content .content a {
-
-            font-weight: bold;
-            color: #F0F0F1;
-            font-size: 1.125;
-
-        }
-
-        .container>.content .end {
-            margin-top: 8px;
-        }
-
-        .content .subscribe p {
-            margin-bottom: 5px;
-        }
-
-        .content .subscribe .input {}
-
-        .content .subscribe .input input {
-            width: 100%;
-            height: 35px;
-            /* border-radius: ; */
-            border: none;
-            outline: none;
-            margin-bottom: 25px;
-            padding-left: 10px;
-            font-size: 1.125rem;
-
-        }
-
-        .button {
-            align-items: center;
-            background-color: #FFFFFF;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: .25rem;
-            box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-            box-sizing: border-box;
-            color: rgba(0, 0, 0, 0.85);
-            cursor: pointer;
-            display: inline-flex;
-            font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            justify-content: center;
-            line-height: 1.25;
-            margin: 0;
-            min-height: 3rem;
-            padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-            position: relative;
-            text-decoration: none;
-            transition: all 250ms;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            vertical-align: baseline;
-            width: auto;
-        }
-
-        .button:hover,
-        .button:focus {
-            border-color: rgba(0, 0, 0, 0.15);
-            box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-            color: rgba(0, 0, 0, 0.65);
-        }
-
-        .button:hover {
-            transform: translateY(-1px);
-        }
-
-        .button:active {
-            background-color: #F0F0F1;
-            border-color: rgba(0, 0, 0, 0.15);
-            box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-            color: rgba(0, 0, 0, 0.65);
-            transform: translateY(0);
-        }
-
-        footer {
-            position: absolute;
-            bottom: 52px;
-            left: 52px;
-        }
-
-        footer>div {
-            letter-spacing: 0px;
-            font-size: 1.5625rem;
-        }
-
-
-        @media (min-width: 380px) and (max-width: 600px) {
-            html {
-                font-size: 10px;
-            }
-        }
-
-        @media (min-width: 1px) and (max-width: 379px) {
-            html {
-                font-size: 9px;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="content">
-            <h1>ALBESHRI GROUP</h1>
-            <div>
-                <p class="title">We’ll be back soon!</p>
-                <p class="content">
-                    Sorry for the inconvenience. We’re performing some maintenance<br /> at the moment. If you need to
-                    you
-                    can
-                    always follow us on <a href="https://twitter.com/mns883">Twitter</a>
-                    <!-- <br />for updates, otherwise we’ll be back up shortly! -->
-                </p>
+      <div class="content">
+        <h1>ALBESHRI GROUP</h1>
+        <div>
+          <p class="title">We’ll be back soon ..!</p>
+          <!-- <p class="content">We’ll be back soon ..!</p> -->
 
-                <p class="end">— ALBESHRI GROUP —</p>
-            </div>
-            <!-- <div class="subscribe">
+          <div class="end">
+            <div>Founder and chairman</div>
+            <div>MANSOOR ALBESHRI</div>
+          </div>
+          <div class="icon">
+            <a href="https://twitter.com/mns883"><img src="/large-x-logo.png.twimg.1920.png" /></a>
+            <a href="https://twitter.com/mns883"><img src="/instagram_2111463.png" /></a>
+            <a href="https://twitter.com/mns883"><img src="/pngimg.com - snapchat_PNG24.png" /></a>
+            <a href="https://twitter.com/mns883"><img src="/facebook_4494475.png" /></a>
+          </div>
+        </div>
+        <!-- <div class="subscribe">
                 <p>Notify you when we are ready </p>
                 <div class="input">
                     <input type="email" placeholder="your Email">
@@ -182,12 +138,7 @@
                 </div>
 
             </div> -->
-        </div>
-        <footer>
-            <div>Founder chairman</div>
-            <div>Mansoor Albeshri</div>
-        </footer>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
